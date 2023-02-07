@@ -12,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 class DemoMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $mailData;
 
     /**
      * Create a new message instance.
@@ -30,7 +31,7 @@ class DemoMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from ItSolutionStuff.com')
+        return $this->subject('Mail from Salwa Alhajjaji')
                     ->view('emails.demoMail');
     }
 
@@ -39,24 +40,24 @@ class DemoMail extends Mailable
      *
      * @return \Illuminate\Mail\Mailables\Envelope
      */
-    public function envelope()
-    {
-        return new Envelope(
-            subject: 'Demo Mail',
-        );
-    }
+    // public function envelope()
+    // {
+    //     return new Envelope(
+    //         subject: 'Demo Mail',
+    //     );
+    // }
 
     /**
      * Get the message content definition.
      *
      * @return \Illuminate\Mail\Mailables\Content
      */
-    public function content()
-    {
-        return new Content(
-            view: 'view.name',
-        );
-    }
+    // public function content()
+    // {
+    //     return new Content(
+    //         view: 'view.name',
+    //     );
+    // }
 
     /**
      * Get the attachments for the message.

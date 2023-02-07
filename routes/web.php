@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhoneAppController; 
+use App\Http\Controllers\MailController; 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,8 +61,9 @@ Route::get('/checkout/{id}', [PhoneAppController::class, 'checkout'])->name('che
 Route::post('/getInvoice', [PhoneAppController::class, 'getInvoice'])->name('getInvoice');
 
 
-Route::get('/getPhoneList', [PhoneAppController::class, 'getAllPhones'])->name('phonelist');;
+Route::get('/getPhoneList', [PhoneAppController::class, 'getAllPhones'])->name('phonelist');
 
+Route::get('/send-mail', [MailController::class, 'index']);
 
 
 
