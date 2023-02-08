@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 class PhoneAppController extends Controller
 {
     //
@@ -65,7 +66,7 @@ class PhoneAppController extends Controller
                  'vat'=> $request->vat,
                  'total'=> $request->total]);
        
-       
+        Cache::put('price',$request->price);
         $invoice = [
             'fullname' => $request->firstName.' '.$request->lastName,
             'email' => $request->email,
